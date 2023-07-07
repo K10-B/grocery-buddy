@@ -1,2 +1,1 @@
 # grocery-buddy
-# grocery-buddy
