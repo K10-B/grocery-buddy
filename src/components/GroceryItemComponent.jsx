@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 
 const GroceryItemComponent = ({item, handleEditItem, handleDeleteItem}) => {
     const [istEditing, setIsEditing] = useState(false);
@@ -15,13 +15,13 @@ const GroceryItemComponent = ({item, handleEditItem, handleDeleteItem}) => {
             setErrors("Grocery item must not be empty.");
         }
     };
-    return ( 
+    return (
     <>
         <li>
             {istEditing ? (
-                <input 
-                type="text" 
-                value={newItem} 
+                <input
+                type="text"
+                value={newItem}
                 onChange={(event) => setNewItem(event.target.value)}
                 />
             ) : (
@@ -34,14 +34,14 @@ const GroceryItemComponent = ({item, handleEditItem, handleDeleteItem}) => {
                 >
                     {istEditing ? "Save" : "Edit"}
                 </button>
-                <button onClick={() => handleDeleteItem(item.id)} 
+                <button onClick={() => handleDeleteItem(item.id)}
                 className='btn-delete'
                 >
                     Delete
                 </button>
             </div>
         </li>
-        {errors ? <p className='errors'>{errors}</p> : null} 
+        {errors ? <p className='errors'>{errors}</p> : null}
     </>
     )
 }
